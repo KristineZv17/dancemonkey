@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancing Monkey Tool</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #monkey {
+            max-width: 100%;
+            height: auto;
+            display: none;
+            margin-top: 20px;
+        }
+
+        #danceButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="danceButton" onclick="startDancing()">Dance</button>
+    <img id="monkey" src="C:\Users\kzviedre\OneDrive - SIA Tet\Desktop\arangutan-monkey.gif" alt="Dancing Monkey">
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="C:\Users\kzviedre\Downloads\upbeat-funk-commercial-112624.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        function startDancing() {
+            var monkey = document.getElementById("monkey");
+            var danceButton = document.getElementById("danceButton");
+            var backgroundMusic = document.getElementById("backgroundMusic");
+
+            if (monkey.style.display === "none") {
+                monkey.style.display = "block";
+                danceButton.innerText = "Stop Dancing";
+                backgroundMusic.play();
+            } else {
+                monkey.style.display = "none";
+                danceButton.innerText = "Dance";
+                backgroundMusic.pause();
+            }
+        }
+    </script>
+</body>
+</html>
